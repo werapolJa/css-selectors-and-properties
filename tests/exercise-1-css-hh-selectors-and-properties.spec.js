@@ -10,44 +10,14 @@ test("exercise-1-css-hh-selectors-and-properties", async ({ page }) => {
   const url = "file:///" + currentPath;
   await page.goto(url);
 
-  const username = page.locator("#username");
-  const password = page.locator("#password");
-  const email = page.locator("#email");
-  const submit = page.locator("button");
-
-  const usernameId = await username.evaluate((ele) => {
-    return window.getComputedStyle(ele);
+  expect(
+    await page.screenshot({
+      fullPage: true,
+    })
+  ).toMatchSnapshot({
+    name: "exercise-1-css-hh-selectors-and-properties-chromium-darwin.png",
+    threshold: 0.5,
+    maxDiffPixels: 10000,
+    // maxDiffPixelRatio: 0.2,
   });
-  const passwordId = await password.evaluate((ele) => {
-    return window.getComputedStyle(ele);
-  });
-  const emailId = await email.evaluate((ele) => {
-    return window.getComputedStyle(ele);
-  });
-  const submitBtn = await submit.evaluate((ele) => {
-    return window.getComputedStyle(ele);
-  });
-  expect(usernameId.height).toEqual("50px", "ความสูงของInputจะต้องถูกต้อง");
-  expect(usernameId.width).toBe("240px", "ความกว้างของInputจะต้องถูกต้อง");
-  expect(usernameId.borderRadius).toBe(
-    "3px",
-    "ความหนาของกรอบของInputจะต้องถูกต้อง"
-  );
-  expect(passwordId.height).toBe("50px", "ความสูงของInputจะต้องถูกต้อง");
-  expect(passwordId.width).toBe("240px", "ความกว้างของInputจะต้องถูกต้อง");
-  expect(passwordId.borderRadius).toBe(
-    "3px",
-    "ความหนาของกรอบของInputจะต้องถูกต้อง"
-  );
-  expect(emailId.height).toBe("50px", "ความสูงของInputจะต้องถูกต้อง");
-  expect(emailId.width).toBe("240px", "ความกว้างของInputจะต้องถูกต้อง");
-  expect(emailId.borderRadius).toBe(
-    "3px",
-    "ความหนาของกรอบของInputจะต้องถูกต้อง"
-  );
-
-  expect(submitBtn.border).toContain("rgb(211, 211, 211)"),
-    "สีของกรอบจะต้องถูกต้อง";
-  expect(submitBtn.backgroundColor).toBe("rgb(240, 230, 140)"),
-    "สีของกรอบจะต้องถูกต้อง";
 });
