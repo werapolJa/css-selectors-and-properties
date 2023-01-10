@@ -1,0 +1,21 @@
+{
+  "name": "css-hh-selectors-and-properties",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techupth/css-hh-selectors-and-properties.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techupth/css-hh-selectors-and-properties/issues"
+  },
+  "homepage": "https://github.com/techupth/css-hh-selectors-and-properties#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.29.2"
+  }
+}
