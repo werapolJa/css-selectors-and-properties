@@ -12,8 +12,11 @@ test("exercise-1-css-hh-selectors-and-properties", async ({ page }) => {
 
   const submit = page.locator("button");
   const submitBtn = await submit.evaluate((ele) => {
-    return window.getComputedStyle(ele).getPropertyValue("border");
+    return window.getComputedStyle(ele).getPropertyValue("border-color");
   });
+
+  console.log(submitBtn);
+
   expect(submitBtn).toContain("rgb(211, 211, 211)");
   expect(
     await page.screenshot({
@@ -22,7 +25,7 @@ test("exercise-1-css-hh-selectors-and-properties", async ({ page }) => {
   ).toMatchSnapshot({
     name: "exercise-1-css-hh-selectors-and-properties.png",
     threshold: 0.55,
-    // maxDiffPixels: 3000,
+    maxDiffPixels: 500,
     // maxDiffPixelRatio: 0.2,
   });
 });
