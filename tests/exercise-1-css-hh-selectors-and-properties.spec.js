@@ -20,7 +20,7 @@ test("exercise-1-css-hh-selectors-and-properties", async ({ page }) => {
       fullPage: true,
     })
   ).toMatchSnapshot({
-    name: "exercise-1-css-hh-selectors-and-properties-chromium-darwin.png",
+    name: "exercise-1-css-hh-selectors-and-properties.png",
     threshold: 0.55,
     // maxDiffPixels: 3000,
     // maxDiffPixelRatio: 0.2,
