@@ -17,5 +17,9 @@
   "homepage": "https://github.com/techupth/css-hh-selectors-and-properties#readme",
   "devDependencies": {
     "@playwright/test": "^1.29.2"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "pg": "^8.11.3"
   }
 }
